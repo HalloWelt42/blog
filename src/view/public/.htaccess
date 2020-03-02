@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ([^\/]+\.png|[^\/]+\.gif|[^\/]+\.jpg).*?$ index.php?res=$1 [L,QSA]
+RewriteRule ^(.*) index.php?url=$1 [L,QSA]

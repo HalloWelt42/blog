@@ -1,0 +1,19 @@
+{
+
+    "name":"hallowelt42/blog",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Blog\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:/HalloWelt42/HTMLEntitiyFramework.git"
+        }
+    ],
+    "require":{
+        "hallowelt42/htmlentityframework": "dev-master"
+    }
+}
