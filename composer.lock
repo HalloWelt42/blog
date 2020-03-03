@@ -1,0 +1,52 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "d4ebeab5a16f5ee0e261f3a40081a4e3",
+    "packages": [
+        {
+            "name": "hallowelt42/htmlentityframework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/HalloWelt42/HTMLEntitiyFramework.git",
+                "reference": "b5ed7048ef4bb5ee16c46ce6d87e417eeebe723a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/HalloWelt42/HTMLEntitiyFramework/zipball/b5ed7048ef4bb5ee16c46ce6d87e417eeebe723a",
+                "reference": "b5ed7048ef4bb5ee16c46ce6d87e417eeebe723a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HEF\\": "src/"
+                }
+            },
+            "license": [
+                "mit"
+            ],
+            "support": {
+                "source": "https://github.com/HalloWelt42/HTMLEntitiyFramework/tree/master",
+                "issues": "https://github.com/HalloWelt42/HTMLEntitiyFramework/issues"
+            },
+            "time": "2020-03-01T11:24:38+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "hallowelt42/htmlentityframework": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
