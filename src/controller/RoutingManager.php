@@ -18,11 +18,18 @@ class RoutingManager
     };
 
     $routes['master.css'] = function (){
-      header("Content-Type: text/css");
+      header('Content-Type: text/css');
       echo file_get_contents(__DIR__.'/../view/css/master.css' );
     };
 
     $routes[($_GET['url']??'')]();
+
+  }
+
+  private function chk_routetype(){
+
+    $extention = strpos($_GET['url']??'' ,-1 );
+
 
   }
 
