@@ -17,8 +17,8 @@ class App
   public function __construct()
   {
 
-    #new RoutingManager();
-    echo new OutputDummy;
+    new RoutingManager();
+    #echo new OutputDummy;
 
   }
 }

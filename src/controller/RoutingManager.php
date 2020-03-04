@@ -4,15 +4,25 @@
 namespace Blog\controller;
 
 
+use Blog\view\example\OutputDummy;
+use Blog\view\pages\StartPage;
+
 class RoutingManager
 {
 
   public function __construct()
   {
 
-    print_r(
-        ($_GET['url']??'')
-    );
+    $routes[''] = function (){
+      echo new StartPage();
+    };
+
+    $routes['master.css'] = function (){
+      header("Content-Type: text/css");
+      echo file_get_contents(__DIR__.'/../view/css/master.css' );
+    };
+
+    $routes[($_GET['url']??'')]();
 
   }
 

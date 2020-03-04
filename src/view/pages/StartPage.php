@@ -1,14 +1,17 @@
 <?php
 
 
-namespace Blog\view\example;
+namespace Blog\view\pages;
 
 
 use HEF\controller\HTMLSerializer;
+use HEF\model\attributes\globals\ClassType;
+use HEF\model\attributes\globals\Id;
 use HEF\model\attributes\Href;
 use HEF\model\attributes\Rel;
 use HEF\model\HTMLContent;
 use HEF\model\htmlelements\Body;
+use HEF\model\htmlelements\Div;
 use HEF\model\htmlelements\Head;
 use HEF\model\htmlelements\Html;
 use HEF\model\htmlelements\Link;
@@ -16,12 +19,22 @@ use HEF\model\htmlelements\Pre;
 use HEF\model\htmlelements\Text;
 use HEF\model\htmlelements\Title;
 
-class OutputDummy
+class StartPage
 {
 
   /**
-   * @return string
+   * @var Div
    */
+  private $head_container;
+
+  public function __construct()
+  {
+    $this->head_container = (new Div(
+
+    ))->set_class(new ClassType('head-container'));
+  }
+
+
   public function __toString()
   {
     return
@@ -38,13 +51,11 @@ class OutputDummy
             )
 
             ->add_htmlelement((new Body())
-                ->add_htmlelement((new Pre())
-                    ->add_htmlelement(new Text(new HTMLContent(
-                        print_r($_GET, 1)
-                    )))
+                ->add_htmlelement($this->head_container
+
                 )
             )
-        ))->compile();
-  }
+        ))->compile();  }
+
 
 }

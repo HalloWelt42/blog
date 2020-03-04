@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/HalloWelt42/HTMLEntitiyFramework.git",
-                "reference": "b5ed7048ef4bb5ee16c46ce6d87e417eeebe723a"
+                "reference": "567823bc2e11c99cedb77371646ace0947dfe72f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HalloWelt42/HTMLEntitiyFramework/zipball/b5ed7048ef4bb5ee16c46ce6d87e417eeebe723a",
-                "reference": "b5ed7048ef4bb5ee16c46ce6d87e417eeebe723a",
+                "url": "https://api.github.com/repos/HalloWelt42/HTMLEntitiyFramework/zipball/567823bc2e11c99cedb77371646ace0947dfe72f",
+                "reference": "567823bc2e11c99cedb77371646ace0947dfe72f",
                 "shasum": ""
             },
             "require": {
@@ -36,7 +36,7 @@
                 "source": "https://github.com/HalloWelt42/HTMLEntitiyFramework/tree/master",
                 "issues": "https://github.com/HalloWelt42/HTMLEntitiyFramework/issues"
             },
-            "time": "2020-03-01T11:24:38+00:00"
+            "time": "2020-03-03T19:12:39+00:00"
         }
     ],
     "packages-dev": [],

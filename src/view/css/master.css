@@ -1,3 +1,14 @@
-main{
-    background-color: hsla( 0 ,0%,10%, 1 );
+body {
+    background-color: hsla(0, 0%, 15%, 1);
+    color: hsla(0, 0%, 100%, 1);
+    font-family: Arial;
+    padding: unset;
+    margin: unset;
+
+}
+
+.head-container{
+    height: 150px;
+    margin: 1px;
+    background-color: #333;
 }
