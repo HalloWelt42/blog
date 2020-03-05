@@ -9,11 +9,14 @@ use HEF\model\attributes\globals\ClassType;
 use HEF\model\attributes\globals\Id;
 use HEF\model\attributes\Href;
 use HEF\model\attributes\Rel;
+use HEF\model\attributes\Src;
 use HEF\model\HTMLContent;
+use HEF\model\HTMLElement;
 use HEF\model\htmlelements\Body;
 use HEF\model\htmlelements\Div;
 use HEF\model\htmlelements\Head;
 use HEF\model\htmlelements\Html;
+use HEF\model\htmlelements\Img;
 use HEF\model\htmlelements\Link;
 use HEF\model\htmlelements\Pre;
 use HEF\model\htmlelements\Text;
@@ -23,15 +26,38 @@ class StartPage
 {
 
   /**
-   * @var Div
+   * @var HTMLElement
    */
   private $head_container;
 
   public function __construct()
   {
-    $this->head_container = (new Div(
+    $this->head_container = (new Div())
+        ->set_class(new ClassType('head-container'))
+        ->add_htmlelement((new Div())
+            ->set_class(new ClassType('img-container'))
+            ->add_htmlelement(
+                (new Div())
+                    ->set_class(new ClassType('img-wrepper'))
+                    ->add_htmlelement(
+                    (new Img())->set_src(new Src('350x150.png'))
+                )
 
-    ))->set_class(new ClassType('head-container'));
+            )
+        )->add_htmlelement(
+
+            (new Div())
+                ->set_class(new ClassType('text-container'))
+                ->add_htmlelement((new Div())
+                    ->set_class(new ClassType('blog-name'))
+                    ->add_htmlelement((new Text(new HTMLContent('MyBlog'))))
+                )
+                ->add_htmlelement((new Div())
+                    ->set_class(new ClassType('blog-description'))
+                    ->add_htmlelement((new Text(new HTMLContent('Der neue Blog'))))
+                )
+
+        );
   }
 
 
@@ -39,26 +65,20 @@ class StartPage
   {
     return
         (new HTMLSerializer((new Html())
-
             ->add_htmlelement((new Head())
                 ->add_htmlelement((new Title())
                     ->add_htmlelement((new Text(new HTMLContent('MyBlog'))))
                 )
                 ->add_htmlelement((new Link())
-                    ->set_rel(new Rel(Rel::STYLESHEET ))
+                    ->set_rel(new Rel(Rel::STYLESHEET))
                     ->set_href(new Href('master.css'))
                 )
             )
-
             ->add_htmlelement((new Body())
-                ->add_htmlelement(
-                    new Text(new HTMLContent(
-                        print_r($_GET,1)
-                    ))
-
-                )
+                ->add_htmlelement($this->head_container)
             )
-        ))->compile();  }
+        ))->compile();
+  }
 
 
 }

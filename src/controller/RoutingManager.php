@@ -10,29 +10,35 @@ use Blog\view\pages\StartPage;
 class RoutingManager
 {
 
+  private $routes;
+
   public function __construct()
   {
 
-    $routes['xxx'] = function (){
+    $this->routes[''] = function () {
       echo new StartPage();
     };
 
-    $routes['master.css'] = function (){
+    $this->routes['master.css'] = function () {
       header('Content-Type: text/css');
-      echo file_get_contents(__DIR__.'/../view/css/master.css' );
+      echo file_get_contents(__DIR__ . '/../view/css/master.css');
     };
 
 
-    $routes[$this->get_modul(($_GET['ext']??'') )]();
-    $routes[($_GET['res']??'')]();
 
-  }
 
-  private function get_modul($ext ){
-    switch ($ext){
-      case 'css' : return ($_GET['res']??'');
-      case 'php' : return ($_GET['url']??'');
+    switch (($_GET['ext'] ?? '')) {
+      case 'css' :
+        $this->routes[($_GET['res'] ?? '')]();
+        break;
+      case 'php' :
+        $this->routes[($_GET['url'] ?? '')]();
+        break;
+      case 'png' :
+        header('Content-Type: image/png');
+        echo file_get_contents(__DIR__ . "/../view/images/{$_GET['res']}");
     }
+
   }
 
 
