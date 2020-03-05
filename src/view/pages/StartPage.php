@@ -51,7 +51,10 @@ class StartPage
             )
 
             ->add_htmlelement((new Body())
-                ->add_htmlelement($this->head_container
+                ->add_htmlelement(
+                    new Text(new HTMLContent(
+                        print_r($_GET,1)
+                    ))
 
                 )
             )

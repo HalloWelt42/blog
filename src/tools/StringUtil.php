@@ -31,28 +31,6 @@ class StringUtil
     return $this;
   }
 
-  /**
-   * @return string
-   */
-  public function get_file_extention_name()
-  {
-    $pos = strrpos($this->str, '.');
 
-    if ($pos === false) {
-      return '';
-    }
-
-    $str = substr($this->str, ++$pos) ?: '';
-
-    if( preg_match('/\W/',$str)){
-      return '';
-    }
-
-    return $str;
-  }
-
-  public function get_file_name(){
-
-  }
 
 }

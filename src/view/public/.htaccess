@@ -1,7 +1,8 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^.*$ - [NC,L]
-RewriteRule ([^\/]+\.png|[^\/]+\.gif|[^\/]+\.jpg|[^\/]+\.css).*?$ index.php?res=$1 [L,QSA]
+#RewriteCond %{REQUEST_FILENAME} -s [OR]
+#RewriteCond %{REQUEST_FILENAME} -l [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+#RewriteRule ^.*$ - [NC,L]
+#RewriteRule ([^\/]+\.png|[^\/]+\.gif|[^\/]+\.jpg|[^\/]+\.css).*?$ index.php?res=$1 [L,QSA]
+RewriteRule [^/\\&\?]+\.(\w{3,4})(?=([\?&].*$|$)) index.php?res=$0&ext=$1 [L,QSA]
 RewriteRule ^(.*) index.php?url=$1 [L,QSA]

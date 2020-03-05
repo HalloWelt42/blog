@@ -13,7 +13,7 @@ class RoutingManager
   public function __construct()
   {
 
-    $routes[''] = function (){
+    $routes['xxx'] = function (){
       echo new StartPage();
     };
 
@@ -22,15 +22,17 @@ class RoutingManager
       echo file_get_contents(__DIR__.'/../view/css/master.css' );
     };
 
-    $routes[($_GET['url']??'')]();
+
+    $routes[$this->get_modul(($_GET['ext']??'') )]();
+    $routes[($_GET['res']??'')]();
 
   }
 
-  private function chk_routetype(){
-
-    $extention = strpos($_GET['url']??'' ,-1 );
-
-
+  private function get_modul($ext ){
+    switch ($ext){
+      case 'css' : return ($_GET['res']??'');
+      case 'php' : return ($_GET['url']??'');
+    }
   }
 
 
