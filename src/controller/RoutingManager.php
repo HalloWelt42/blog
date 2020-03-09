@@ -16,6 +16,7 @@ class RoutingManager
   {
 
     $this->routes[''] = function () {
+      header('Content-Type: text/html; charset=utf-8');
       echo new StartPage();
     };
 

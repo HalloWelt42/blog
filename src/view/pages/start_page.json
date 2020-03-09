@@ -1,0 +1,15 @@
+{
+  "head-nav": {
+    "left": [
+      {
+        "url": "",
+        "label": "HOME"
+      },
+      {
+        "url": "impress",
+        "label": "IMPRESS"
+      }
+    ],
+    "right": []
+  }
+}
