@@ -22,20 +22,20 @@ class NavBar
   }
 
 
-  public function import_entries( $json ){
+  public function importEntries($json ){
     foreach ( $json as $entry ) {
-      $this->add_entry(new NavBarEntry($entry['label'], $entry['url']));
+      $this->addEntry(new NavBarEntry($entry['label'], $entry['url']));
     }
     return $this;
   }
 
-  public function add_entry(NavBarEntry $entry)
+  public function addEntry(NavBarEntry $entry)
   {
-    $this->entries->add_htmlelement((new Li)
-        ->add_htmlelement((new A)
-            ->set_href($entry->get_href())
-            ->add_htmlelement(
-                $entry->get_label()
+    $this->entries->addElement((new Li)
+        ->addElement((new A)
+            ->sHref($entry->gHref())
+            ->addElement(
+                $entry->gLabel()
             )
 
         )

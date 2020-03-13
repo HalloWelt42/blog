@@ -27,19 +27,19 @@ class OutputDummy
     return
         (new HTMLSerializer((new Html())
 
-            ->add_htmlelement((new Head())
-                ->add_htmlelement((new Title())
-                    ->add_htmlelement((new Text(new HTMLContent('MyBlog'))))
+            ->addElement((new Head())
+                ->addElement((new Title())
+                    ->addElement((new Text(new HTMLContent('MyBlog'))))
                 )
-                ->add_htmlelement((new Link())
-                    ->set_rel(new Rel(Rel::STYLESHEET ))
-                    ->set_href(new Href('master.css'))
+                ->addElement((new Link())
+                    ->sRel(new Rel(Rel::STYLESHEET ))
+                    ->sHref(new Href('master.css'))
                 )
             )
 
-            ->add_htmlelement((new Body())
-                ->add_htmlelement((new Pre())
-                    ->add_htmlelement(new Text(new HTMLContent(
+            ->addElement((new Body())
+                ->addElement((new Pre())
+                    ->addElement(new Text(new HTMLContent(
                         print_r($_GET, 1)
                     )))
                 )

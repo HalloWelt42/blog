@@ -23,29 +23,29 @@ class NavBarEntry
 
   public function __construct($text, $href)
   {
-    $this->set_label($text);
-    $this->set_href($href);
+    $this->sLabel($text);
+    $this->sHref($href);
   }
 
-  public function set_label($label): self
+  public function sLabel($label): self
   {
     $this->label = (new Text(new HTMLContent($label)));
     return $this;
   }
 
 
-  public function set_href($href): self
+  public function sHref($href): self
   {
     $this->href = new Href($href);
     return $this;
   }
 
-  public function get_href(): Href
+  public function gHref(): Href
   {
     return $this->href;
   }
 
-  public function get_label(): Text
+  public function gLabel(): Text
   {
     return $this->label;
   }
